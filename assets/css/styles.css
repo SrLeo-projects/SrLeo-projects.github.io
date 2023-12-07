@@ -1,0 +1,228 @@
+@font-face {
+    font-family: "Cascadia Code PL";
+    src: url("/assets/fonts/CascadiaCodePL-Regular.otf")
+}
+
+body {
+    font-family: "Cascadia Code PL";
+}
+
+a { text-decoration: none }
+
+p { margin-bottom: 0 }
+
+.text-balance { text-wrap: balance }
+
+.fs-sm { font-size: 0.875rem }
+.fs-xs { font-size: 0.75rem }
+
+.loader {
+    background-color: var(--bs-secondary);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    opacity: 1;
+    animation: fadeHide 1.5s forwards;
+}
+
+@keyframes fadeHide {
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.right-content {
+    width: calc(100% - 56px);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+@property --var1 {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: transparent;
+}
+
+.wrapper {
+    min-height: calc(100vh - 40.67px);
+    transition: --var1 0.3s ease;
+}
+
+.wrapper:hover {
+    --var1: #2c313c;
+}
+
+/* width */
+.wrapper::-webkit-scrollbar {
+    display: unset;
+    width: 20px;
+}
+
+.wrapper::-webkit-scrollbar-track {
+    border-left: 1px solid rgb(255, 255, 255, 0.125);
+}
+
+.wrapper::-webkit-scrollbar-thumb {
+    background: var(--var1);
+    transition: all 0.3s ease;
+}
+
+.wrapper {
+    overflow-y: scroll;
+}
+
+#wrapper-container {
+    width: calc(100% - 48px);
+}
+
+/* Numbar */
+
+#numbar {
+    height: 100%;
+    width: 3rem;
+    padding-right: 0.75rem;
+    text-align: end;
+    color: rgba(255, 255, 255, 0.5)!important;
+}
+
+#numbar ul li.active {
+    color: rgba(255, 255, 255)!important;
+}
+
+@media (max-width: 576px) {
+    #numbar {
+        padding-right: 0.5rem;
+    }
+}
+
+/* Toolbar */
+
+.toolbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.toolbar a {
+    color: rgba(255, 255, 255, 0.5);
+    padding: 0.35rem 0;
+    font-size: 1.5rem;
+}
+
+/* Typewriter */
+
+.typewriter span:empty {
+    position: relative;
+}
+
+.typewriter span:empty::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    border-right: 2px solid var(--bs-primary);
+    animation: caret 1s steps(1) infinite;
+}
+  
+@keyframes caret {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Nav */
+
+.nav-files {
+    display: flex;
+}
+
+.nav-files .nav-file {
+    color: rgba(255, 255, 255, 0.5);
+    background-color: var(--bs-dark);
+    padding: 0.5rem 1.5rem;
+    border-bottom: 1px solid rgb(255, 255, 255, 0.25);
+}
+
+.nav-files .nav-file:hover {
+    color: rgba(255, 255, 255, 0.75);
+    background-color: #323842;
+}
+
+.nav-files .nav-file i.fa-code {
+    color: #e3633f;
+}
+
+/* Content */
+
+.parent-tag + .child-tag {
+    border-left: 1px solid rgba(255, 255, 255, 0.25);
+    padding-left: 1.5rem;
+}
+
+@media (max-width: 576px) {
+    .parent-tag + .child-tag {
+        padding-left: 1rem;
+    }
+}
+
+hr {
+    border-color: rgba(255, 255, 255);
+    margin: 0 1rem;
+}
+
+/* Social Media */
+
+.social-media-container a:hover:has(i.fa-linkedin) {
+    background-color: #0073b1!important;
+}
+
+.social-media-container a:hover:has(i.fa-github) {
+    background-color: #333!important;
+}
+
+.social-media-container a:hover:has(i.fa-whatsapp) {
+    background-color: #06cf9c!important;
+}
+
+/* Splide */
+
+.splide__arrow {
+    top: calc(100% + 2rem);
+}
+
+.splide__pagination {
+    top: calc(100% + 1.5rem);
+}
+
+@media (max-width: 576px) {
+    .splide__pagination {
+        top: calc(100% + 0.5rem);
+    }
+}
+
+/* Projects */
+
+.project {
+    height: 100%;
+}
+
+.project-images img {
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.project-images img:last-of-type {
+    left: 100%;
+}
+
+.project-images:hover img:last-of-type {
+    left: 0;
+}
